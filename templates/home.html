@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/style.css" %}" >
+    <style>
+
+
+    </style>
+</head>
+<body>
+ <div class="main-block">
+
+    <table>
+      <thead>
+        <tr class="border_bottom">
+          <th>Projects</th>
+          <th>Alter</th>
+          <th>Detail</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for each in project %}
+        <tr class="border_bottom">
+          <td>{{each.name}}</td>
+          <td><a  href="/project/edit/{{each.id}}"><button>Edit</button></a></td>
+          <td><a  href="/project/detail/{{each.id}}"><button>Detail</button></a></td>
+         <td><a  href="/project/delete/{{each.id}}"><button>Delete</button></a></td>
+        </tr>
+      {% endfor %}
+
+<tr class="border_bottom"></tr>
+
+      </tbody>
+<tfoot>
+    <tr class="border_bottom">
+        <td></td>
+         <td></td>
+      <td align="center"><a  href="/createproject"><button>Create Project</button></a></td>
+        <td></td>
+
+    </tr>
+  </tfoot>
+    </table>
+
+    </div>
+</body>
+</html>

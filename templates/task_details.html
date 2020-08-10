@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+      <link rel="stylesheet" href="{% static "css/style.css" %}" >
+
+    <style>
+
+      .left-part, form,button {
+      width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+        <form  name="MyForm"  method="POST">
+        {% csrf_token %}
+        <h1>Task Details</h1>
+        <div class="info" >
+
+
+
+            <input type="label" name="name" value="{{task.name}}"><br>
+
+            <input type="text-area" name="description" value="{{task.description}}"><br>
+
+            <input type="label" name="start_time" value="{{task.start_time}}" ><br>
+
+            <input type="label" name="end_time" value="{{task.end_time}}" ><br>
+
+
+
+        </div>
+
+        <button type="submit">OK</button>
+      </form>
+    </div>
+  </body>
+</html>
